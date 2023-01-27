@@ -1,0 +1,22 @@
+.faq{
+    width: 100%;
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.faq p, .image{
+    display: none;
+}
+#img_souris{
+    position: absolute;
+    width: 45px;
+    height: auto;
+}
+.drag{
+    border: 1px dotted gray;
+    width: 500px;
+    height: 500px;
+}
+div{
+    border: 1px dotted black;
+}

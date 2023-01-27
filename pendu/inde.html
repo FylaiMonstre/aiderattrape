@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendu</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Gagner ou mourir</h1>
+    <div>
+        <table BORDER="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="5" valign="top">
+                    <form name="pendu">
+                        <div class="input">
+                            <label for="motcache">Le mot à deviner</label>
+                            <input type="text" name="motcache" size="12" maxlength="20" disabled="disabled">
+                        </div>
+                        <div class="input">
+                            <label for="caracterejoue">Caractères joués</label>
+                            <textarea name="caracterejoue" row="2" cols="20" disabled="disabled"></textarea>
+                        </div>
+                        <div class="input">
+                            <label >Votre proposition</label>
+                            <input type="text" name="caracteres" size="2" maxlength="1">
+                        </div>
+                        <div class="bouton">
+                            <button type="button" onclick="TestCar();">Proposer</button>
+                            <button type="button" onclick="Initialise();">Rejouer</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <div id="partie">
+
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/js.js"></script>
+</body>
+</html>

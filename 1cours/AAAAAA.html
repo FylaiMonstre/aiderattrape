@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiation à javascript</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body unonload="verifierAge()">
+    <script language="Javascript">
+        /*var prenom_utilisateur = "Philemon";
+        var nom_utilisateur = "Sockeel";
+        var age_utilisateur = "inconnu";
+        var message = ' Bonjour '+prenom_utilisateur+' '+nom_utilisateur;
+        document.write(message);
+        var mon_tableau = new Array(11);
+        mon_tableau[0] = 'Angéline';
+        mon_tableau[1] = 'Maxime';
+        mon_tableau[2] = 'Jessica';
+        mon_tableau[3] = 'Joseph';
+        mon_tableau[4] = 'Gérald';
+        mon_tableau[5] = 'Geoffrey';
+        mon_tableau[6] = 'Emilie';
+        mon_tableau[7] = 'Philémon';
+        mon_tableau[8] = 'Francisco';
+        mon_tableau[9] = 'Amélie';
+        mon_tableau[10] = 'Kévin';
+        console.log(mon_tableau);
+        var mon_tableau2 = new Array('Angéline','Maxime','Jessica','Kévin','Joseph','Gérald','Geoffrey','Emilie','Philémon','Francisco','Amélie');
+        console.log(mon_tableau2);
+        var row0= new Array;
+        row0[0]="0";
+        row0[1]="X";
+        row0[2]=" ";
+        var row1= new Array;
+        row1[0]="X";
+        row1[1]="0";
+        row1[2]="X";
+        var row2= new Array;
+        row2[0]=" ";
+        row2[1]="0";
+        row2[2]="X";
+        var morpion= new Array;
+        morpion[0]=row0;
+        morpion[1]=row1;
+        morpion[2]=row2;
+        console.log(morpion);
+
+        var dt = new Date();
+        var jour = dt.getDay();
+        var numero = dt.getDate();
+        var mois = dt.getMonth();
+        //Tableau pour les jours (on va remplacer 0 par dimanche, 1 par lundi, etc...)
+        var tab_jour = new Array ('Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi');
+
+        var tab_mois = new Array ('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Décembre');
+
+        document.write("Nous sommes le "+tab_jour[jour]+" "+numero+" "+tab_mois[mois]);
+
+        for(i=0;i<=5000;i++){
+            if(confirm('etes vous sur de vouloir continuer?')){
+                alert('Vous etes fou');
+            }
+
+        }
+        */
+        function addition(){
+            var nombre1 = document.getElementById('nombre1').value;
+            var nombre2 = document.getElementById('nombre2').value;
+            var operation = (parseFloat(nombre1)+parseInt(nombre2));
+            let dateCookie = new Date(Date.now()+8640000);
+            dateCookie = dateCookie.toUTCString();
+            document.cookie = "name=resultat;valeur="+operation+";expires="+dateCookie;
+            if(isNaN(operation)){
+                alert('Opération impossible');
+            }   else{
+            document.getElementById('resultat').innerHTML = operation;
+            }
+        }
+        function soustraction(){
+            var nombre1 = document.getElementById('nombre1').value;
+            var nombre2 = document.getElementById('nombre2').value;
+            var operation = (parseFloat(nombre1)-parseInt(nombre2));
+            if(isNaN(operation)){
+                alert('Opération impossible');
+            }   else{
+            document.getElementById('resultat').innerHTML = operation; 
+            }
+        }
+        function multiplication(){
+            var nombre1 = document.getElementById('nombre1').value;
+            var nombre2 = document.getElementById('nombre2').value;
+            var operation = (parseFloat(nombre1)*parseInt(nombre2));
+            document.getElementById('resultat').innerHTML = operation;
+        }
+        function division(){
+            var nombre1 = document.getElementById('nombre1').value;
+            var nombre2 = document.getElementById('nombre2').value;
+            var operation = (parseFloat(nombre1)/parseInt(nombre2));
+            document.getElementById('resultat').innerHTML = operation;
+        }
+        function francois(){
+            var element = document.getElementById('hollande').value;
+            console.log(element);
+            document.body.style.background =element;
+        }
+        function verifierAge(){
+            let age = prompt('quel age avez vous ?');
+            if (age >= 18){
+                alert('Ok vous pouvez consulter notre site');
+            }
+            else{
+                window.location = 'http://google.fr';
+            }
+        }
+    </script>
+    
+    <p>
+        <label >Nombre 1</label>
+        <input type="text" name="nombre1" id="nombre1">
+    </p>
+    <p>
+        <label >Nombre 2</label>
+        <input type="text" name="nombre2" id="nombre2">
+    </p>
+    <p>
+        <input type="button" name="addition" value="+" onclick="addition();">
+        <input type="button" name="soustraction" value="-" onclick="soustraction();">
+        <input type="button" name="multiplication" value="*" onclick="multiplication();">
+        <input type="button" name="division" value="/" onclick="division();">
+    </p>
+
+    <p id="resultat"> 
+
+        <label>Le changement c'est maintenant</label>
+        <select name="hollande" id="hollande" onchange="francois()">
+            <option value="#FF0000">Rouge</option>
+            <option value="#000000">Noir</option>
+            <option value="#0027FF">Bleue</option>
+        </select>
+    </p>
+    <script language="Javascript">
+        let calculetteForm = document.forms.calculette;
+        console.log(calculetteForm);
+        calculetteForm.elements.nombre1.placeholder="Entrer un nombre"; 
+        calculetteForm.elements.nombre2.style.background="#FF0000";
+    </script>
+    
+</body>
+</html>
